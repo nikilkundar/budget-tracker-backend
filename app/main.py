@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from .database import Base, engine
 
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi import Request
+from fastapi.responses import Response
 
 #Import all models so SQLAlchemy knows them
 import app.models.user
@@ -14,6 +16,9 @@ app = FastAPI(
     title="Budget Tracker API",
     version="1.0.0"
 )
+@app.options("/{path:path}")
+async def options_handler(request: Request, path: str):
+    return Response(status_code=200)
 #CORS CONFIG
 app.add_middleware(
     CORSMiddleware,
