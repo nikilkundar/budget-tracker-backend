@@ -8,9 +8,6 @@ from app.core.auth import create_access_token
 
 router = APIRouter(prefix="/auth", tags=["Auth"])
 
-@router.options("/login")
-def options_login():
-    return {}
 
 @router.post("/login", response_model=TokenResponse)
 def login(request: LoginRequest, db: Session = Depends(get_db)):
