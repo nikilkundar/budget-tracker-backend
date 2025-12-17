@@ -26,6 +26,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+@app.get("/")
+def root():
+    return {"status": "ok"}
+
 
 from .routers.user_router import router as user_router
 from .routers.expenses import router as expenses_router
