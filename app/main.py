@@ -23,9 +23,10 @@ async def options_handler(request: Request, path: str):
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "http://localhost:5173",  # local frontend
-        "http://127.0.0.1:5173",  # sometimes used by Vite
-        "https://budget-tracker-frontend-by-nik.vercel.app"  # prod frontend
+        "*"
+        # "http://localhost:5173",  # local frontend
+        # "http://127.0.0.1:5173",  # sometimes used by Vite
+        # "https://budget-tracker-frontend-by-nik.vercel.app"  # prod frontend
     ],
     allow_credentials=True,
     allow_methods=["*"],
