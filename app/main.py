@@ -26,7 +26,8 @@ app.add_middleware(
         "http://localhost:5173",
         "http://localhost:4173",
         "https://budget-tracker-frontend-by-nik.vercel.app",
-        "https://*.netlify.app"
+        "https://jolly-brigadeiros-470b0e.netlify.app",
+
     ],
     allow_credentials=True,
     allow_methods=["*"],
